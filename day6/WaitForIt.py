@@ -1,8 +1,6 @@
 ### Imports ###
 
 from time import time
-import re
-import math
 
 ### Methods ###
 
@@ -29,8 +27,11 @@ if __name__ == '__main__':
         distances = [int(s) for s in f.readline().split()[1:]]
         big_dist = int(''.join([str(d) for d in distances]))
     
+    # Part 1
     for t, d in zip(times, distances):
         part1_sol *= get_margin(t, d)
+
+    # Part 2
     part2_sol = get_margin(big_time, big_dist)
 
     print('Solved in {:.2f}ms'.format((time()-start)*1000))
